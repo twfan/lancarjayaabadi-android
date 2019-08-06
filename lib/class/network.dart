@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'dart:async';
 
-String BASE_URL = "https://8dc119d0.ngrok.io";
+String BASE_URL = "https://lancar-jaya-abadi.com";
+// String BASE_URL = "https://lancar-jaya-abadi.com";
 
 class Api {
   static final Api _api = new Api._internal();
