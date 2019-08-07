@@ -22,14 +22,14 @@ class _loginPageState extends State<loginPage> {
   bool _saving = false;
 
   loginToServer() async {
-    var usernameData = usernameController.text;
-    var passwordData = passwordController.text;
+    // var usernameData = usernameController.text;
+    // var passwordData = passwordController.text;
     setState(() {
      _saving = true; 
     });
 
-    // var usernameData = "admin";
-    // var passwordData = "admin";
+    var usernameData = "admin";
+    var passwordData = "admin";
 
     FormData formData =
         new FormData.from({"username": usernameData, "password": passwordData});
@@ -49,9 +49,15 @@ class _loginPageState extends State<loginPage> {
             MaterialPageRoute(builder: (context) => homePage()),
           );
         } else {
+          setState(() {
+           _saving = false; 
+          });
           print("login gagal");
         }
       } else {
+        setState(() {
+           _saving = false; 
+          });
         print("ini error");
         print(result);
       }

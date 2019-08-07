@@ -5,7 +5,7 @@ import 'package:dio/dio.dart';
 import 'dart:async';
 
 String BASE_URL = "https://lancar-jaya-abadi.com";
-// String BASE_URL = "https://lancar-jaya-abadi.com";
+// String BASE_URL = "https://9ffcefce.ngrok.io";
 
 class Api {
   static final Api _api = new Api._internal();
@@ -94,6 +94,25 @@ class Api {
       return temp;
     } catch (e) {
       print(e);
+    }
+  }
+
+  //product delete
+  Future<dynamic> productDelete(Map<String, dynamic> map) async {
+    try {
+      dio.options.headers = {
+        "Accept": "application/json",
+      };
+
+      Response response =
+          await dio.post("$BASE_URL" + "/api/delete_barang.php", data: map);
+
+      print(response);
+
+      return response.data;
+    } catch (e) {
+      print(e);
+      return e;
     }
   }
   
