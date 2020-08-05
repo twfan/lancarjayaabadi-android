@@ -35,11 +35,11 @@ class _productViewState extends State<productView> {
     // TODO: implement initState
     super.initState();
 
-    if(LjaData().search==false){
+    if (LjaData().search == false) {
       listProduct = [];
       LjaData().dataProduct = [];
       fetchingProduct();
-    }else{
+    } else {
       listProduct = [];
       listProduct.addAll(LjaData().dataProduct);
     }
@@ -60,9 +60,9 @@ class _productViewState extends State<productView> {
 
   Future<void> _refreshStockPrices() async {
     setState(() {
-     listProduct = [];
-     LjaData().dataProduct = [];
-     fetchingProduct();
+      listProduct = [];
+      LjaData().dataProduct = [];
+      fetchingProduct();
     });
   }
 
@@ -91,47 +91,45 @@ class _productViewState extends State<productView> {
                   // padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
                   child: Row(
                     children: <Widget>[
-                      Expanded(
-                        child: Container(
-                          color: Color.fromRGBO(35, 103, 104, 1),
-                          // width: 150.0,
-                          // height: 50.0,
-                          child: Center(
-                            child: Column(
-                              children: <Widget>[
-                                Text(
-                                  listProduct[i]["nama"],
-                                  style: TextStyle(
-                                      fontSize: 20.0, color: Colors.white),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.only(top: 10.0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Container(
-                                        margin: EdgeInsets.only(right: 5.0),
-                                        child: Text(
-                                          "Sisa",
-                                          style: TextStyle(color: Colors.white),
-                                        ),
-                                      ),
-                                      Text(
-                                        listProduct[i]["sisa"],
+                      Container(
+                        color: Color.fromRGBO(35, 103, 104, 1),
+                        width: 135.0,
+                        // height: 50.0,
+                        child: Center(
+                          child: Column(
+                            children: <Widget>[
+                              Text(
+                                listProduct[i]["nama"],
+                                style: TextStyle(
+                                    fontSize: 20.0, color: Colors.white),
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(top: 10.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Container(
+                                      margin: EdgeInsets.only(right: 5.0),
+                                      child: Text(
+                                        "Sisa",
                                         style: TextStyle(color: Colors.white),
                                       ),
-                                      Container(
-                                        margin: EdgeInsets.only(left: 5.0),
-                                        child: Text(
-                                          "Pcs",
-                                          style: TextStyle(color: Colors.white),
-                                        ),
+                                    ),
+                                    Text(
+                                      listProduct[i]["sisa"],
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.only(left: 5.0),
+                                      child: Text(
+                                        "Pcs",
+                                        style: TextStyle(color: Colors.white),
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
